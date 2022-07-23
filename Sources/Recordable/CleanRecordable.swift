@@ -43,7 +43,7 @@ public extension CleanRecordable {
     get {
       cleanStorage.get() ?? {
         let clean = Clean(cleanRecordable: self)
-        _clean = clean
+        cleanStorage.set(clean)
         return clean
       }()
     }
